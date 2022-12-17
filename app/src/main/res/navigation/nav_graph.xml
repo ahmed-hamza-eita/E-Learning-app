@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.hamza.e_learningapp.ui.splash.SplashFragment"
+        android:label="SplashFragment"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/action_splashFragment_to_chooseTypeFragment"
+            app:destination="@id/chooseTypeFragment" />
+        <action
+            android:id="@+id/action_splashFragment_to_instructorHomeFragment"
+            app:destination="@id/instructorHomeFragment" />
+        <action
+            android:id="@+id/action_splashFragment_to_studentHomeFragment"
+            app:destination="@id/studentHomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chooseTypeFragment"
+        android:name="com.hamza.e_learningapp.ui.type.ChooseTypeFragment"
+        android:label="fragment_choose_type"
+        tools:layout="@layout/fragment_choose_type" >
+        <action
+            android:id="@+id/action_chooseTypeFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.hamza.e_learningapp.ui.auth.login.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_signupFragment"
+            app:destination="@id/signupFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_chooseTypeFragment"
+            app:destination="@id/chooseTypeFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_instructorHomeFragment"
+            app:destination="@id/instructorHomeFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_studentHomeFragment"
+            app:destination="@id/studentHomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signupFragment"
+        android:name="com.hamza.e_learningapp.ui.auth.signup.SignupFragment"
+        android:label="SignupFragment"
+        tools:layout="@layout/fragment_signup">
+        <action
+            android:id="@+id/action_signupFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_signupFragment_to_instructorHomeFragment"
+            app:destination="@id/instructorHomeFragment" />
+        <action
+            android:id="@+id/action_signupFragment_to_studentHomeFragment"
+            app:destination="@id/studentHomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/instructorHomeFragment"
+        android:name="com.hamza.e_learningapp.ui.instructor.home.InstructorHomeFragment"
+        android:label="fragment_instructor_home"
+        tools:layout="@layout/fragment_instructor_home" >
+        <action
+            android:id="@+id/action_instructorHomeFragment_to_createCourseFragment"
+            app:destination="@id/createCourseFragment" />
+        <action
+            android:id="@+id/action_instructorHomeFragment_to_instructorControlFragment"
+            app:destination="@id/instructorControlFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/studentHomeFragment"
+        android:name="com.hamza.e_learningapp.ui.student.home.StudentHomeFragment"
+        android:label="fragment_student_home"
+        tools:layout="@layout/fragment_student_home" />
+    <fragment
+        android:id="@+id/createCourseFragment"
+        android:name="com.hamza.e_learningapp.ui.instructor.create_course.CreateCourseFragment"
+        android:label="fragment_create_course"
+        tools:layout="@layout/fragment_create_course" />
+    <fragment
+        android:id="@+id/instructorControlFragment"
+        android:name="com.hamza.e_learningapp.ui.instructor.control.InstructorControlFragment"
+        android:label="fragment_instructor_control"
+        tools:layout="@layout/fragment_instructor_control" >
+        <argument
+            android:name="courseName"
+            app:argType="string" />
+        <argument
+            android:name="CourseId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_instructorControlFragment_to_addStudentFragment"
+            app:destination="@id/addStudentFragment" />
+        <action
+            android:id="@+id/action_instructorControlFragment_to_chatFragment"
+            app:destination="@id/chatFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addStudentFragment"
+        android:name="com.hamza.e_learningapp.ui.instructor.add_student.AddStudentFragment"
+        android:label="fragment_add_student"
+        tools:layout="@layout/fragment_add_student" >
+        <argument
+            android:name="courseName"
+            app:argType="string" />
+        <argument
+            android:name="courseId"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="com.hamza.e_learningapp.ui.instructor.chat.ChatFragment"
+        android:label="ChatFragment"
+        tools:layout="@layout/fragment_chat">
+        <argument
+            android:name="courseId"
+            app:argType="string" />
+        <argument
+            android:name="courseName"
+            app:argType="string" />
+    </fragment>
+</navigation>

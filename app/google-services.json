@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "587687965849",
+    "project_id": "e-learning-app-e65a5",
+    "storage_bucket": "e-learning-app-e65a5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:587687965849:android:1780acdd21cf85591c3408",
+        "android_client_info": {
+          "package_name": "com.hamza.e_learningapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "587687965849-n84lipuqreah0uorkqj2p4f22km9j5f2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBraB61lgCuyKsM_9x3gShIzmojAtpNorU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "587687965849-n84lipuqreah0uorkqj2p4f22km9j5f2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
