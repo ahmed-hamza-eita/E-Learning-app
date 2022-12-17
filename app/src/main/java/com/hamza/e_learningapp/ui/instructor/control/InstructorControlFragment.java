@@ -61,16 +61,24 @@ public class InstructorControlFragment extends BaseFragment {
                 showToast("Copied");
             }
         });
-        binding.imgAddMembers.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                navigate(InstructorControlFragmentDirections.actionInstructorControlFragmentToAddStudentFragment(name, id));
-            }
-        });
+
+//        binding.imgAddMembers.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                navigate(InstructorControlFragmentDirections.actionInstructorControlFragmentToAddStudentFragment(name, id));
+//            }
+//        });
+
         binding.imgChat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 navigate(InstructorControlFragmentDirections.actionInstructorControlFragmentToChatFragment(name, id));
+            }
+        });
+        binding.BtnopenMaterials.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                navigate(InstructorControlFragmentDirections.actionInstructorControlFragmentToUplaodFragment(id,name));
             }
         });
     }

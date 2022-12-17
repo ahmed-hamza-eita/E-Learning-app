@@ -101,6 +101,9 @@
         <action
             android:id="@+id/action_instructorControlFragment_to_chatFragment"
             app:destination="@id/chatFragment" />
+        <action
+            android:id="@+id/action_instructorControlFragment_to_uplaodFragment"
+            app:destination="@id/uplaodFragment" />
     </fragment>
     <fragment
         android:id="@+id/addStudentFragment"
@@ -119,6 +122,18 @@
         android:name="com.hamza.e_learningapp.ui.instructor.chat.ChatFragment"
         android:label="ChatFragment"
         tools:layout="@layout/fragment_chat">
+        <argument
+            android:name="courseId"
+            app:argType="string" />
+        <argument
+            android:name="courseName"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/uplaodFragment"
+        android:name="com.hamza.e_learningapp.ui.instructor.uplaod.UplaodFragment"
+        android:label="fragment_uplaod"
+        tools:layout="@layout/fragment_uplaod" >
         <argument
             android:name="courseId"
             app:argType="string" />

@@ -15,4 +15,6 @@ public class Const {
     public static final String REF_COURSES = "Courses";
     public static final String REF_COURSE_MEMBERS = "Members";
     public static final String REF_CHAT = "Chat";
+    public static final String REF_FILES = "Files";
+    public static final String FILE_TYPE = "application/pdf";
 }
