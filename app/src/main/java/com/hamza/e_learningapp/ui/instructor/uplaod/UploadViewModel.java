@@ -9,9 +9,11 @@ import androidx.lifecycle.ViewModel;
 import com.google.android.gms.auth.api.signin.internal.Storage;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.hamza.e_learningapp.models.ModelPDF;
 import com.hamza.e_learningapp.utils.Const;
 
 import javax.inject.Inject;
@@ -31,9 +33,9 @@ public class UploadViewModel extends ViewModel {
         ref = reff;
     }
 
-    public void uploadFile(Uri path, String courseID) {
+    public void uploadFile(Uri path, String courseID,String name) {
         if (path != null) {
-            sRef = storage.child("file/" + courseID + "/"   + System.currentTimeMillis());
+            sRef = storage.child("Files/" + courseID + "/"   + System.currentTimeMillis() );
             sRef.putFile(path).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
@@ -42,7 +44,8 @@ public class UploadViewModel extends ViewModel {
                         @Override
                         public void onSuccess(Uri uri) {
                             String pathF = uri.toString();
-                            ref.child(Const.REF_FILES).child(courseID).push().setValue(pathF);
+                            ModelPDF model=new ModelPDF (pathF,courseID,name);
+                            ref.child(Const.REF_FILES).child(courseID).push().setValue(model);
                             uploadLiveData.setValue(Const.kEY_SUCCESS);
                         }
                     });
@@ -55,4 +58,7 @@ public class UploadViewModel extends ViewModel {
             });
         }
     }
+
+
+
 }

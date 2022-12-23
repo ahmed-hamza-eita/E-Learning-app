@@ -32,5 +32,7 @@
     <string name="student_e_mail">Student E-mail</string>
     <string name="upload_pdf">Upload pdf</string>
     <string name="click_to_select_pdf">Click to select pdf +</string>
+    <string name="show_files">View PDF files</string>
+    <string name="pdf_name">PDF Name</string>
 
 </resources>

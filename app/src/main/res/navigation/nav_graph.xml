@@ -140,5 +140,20 @@
         <argument
             android:name="courseName"
             app:argType="string" />
+        <action
+            android:id="@+id/action_uplaodFragment_to_showFilesFragment"
+            app:destination="@id/showFilesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/showFilesFragment"
+        android:name="com.hamza.e_learningapp.ui.instructor.uplaod.showfiles.ShowFilesFragment"
+        android:label="fragment_show_files"
+        tools:layout="@layout/fragment_show_files" >
+        <argument
+            android:name="courseId"
+            app:argType="string" />
+        <argument
+            android:name="courseName"
+            app:argType="string" />
     </fragment>
 </navigation>

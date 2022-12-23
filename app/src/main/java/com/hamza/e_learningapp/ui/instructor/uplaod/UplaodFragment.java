@@ -1,13 +1,11 @@
 package com.hamza.e_learningapp.ui.instructor.uplaod;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.fragment.NavHostFragment;
@@ -19,7 +17,11 @@ import android.view.ViewGroup;
 import com.hamza.e_learningapp.BaseFragment;
 import com.hamza.e_learningapp.R;
 import com.hamza.e_learningapp.databinding.FragmentUplaodBinding;
+import com.hamza.e_learningapp.models.ModelPDF;
 import com.hamza.e_learningapp.utils.Const;
+
+import java.util.List;
+import java.util.Objects;
 
 import dagger.hilt.android.AndroidEntryPoint;
 
@@ -30,6 +32,7 @@ public class UplaodFragment extends BaseFragment {
     private UploadViewModel uploadViewModel;
     private String id, name;
     Uri uri;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -83,6 +86,7 @@ public class UplaodFragment extends BaseFragment {
                     .load();
             binding.imgUplaod.setVisibility(View.GONE);
             binding.txtAdd.setVisibility(View.GONE);
+            binding.edtPdfName.setVisibility(View.VISIBLE);
         }
     }
 
@@ -90,48 +94,64 @@ public class UplaodFragment extends BaseFragment {
         binding.imgUplaod.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent();
-                i.setAction(Intent.ACTION_GET_CONTENT);
-                i.setType(Const.FILE_TYPE);
-                i.addCategory(Intent.CATEGORY_OPENABLE);
-                startActivityForResult(i, 0);
+                openExternalFile();
 
             }
         });
         binding.txtAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent();
-                i.setAction(Intent.ACTION_GET_CONTENT);
-                i.setType(Const.FILE_TYPE);
-                i.addCategory(Intent.CATEGORY_OPENABLE);
-                startActivityForResult(i, 0);
+               openExternalFile();
             }
         });
-        binding.upload.setOnClickListener(new View.OnClickListener() {
+        binding.btnupload.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
-              loading(false);
+                loading(false);
                 if (uri == null) {
-                   loading(false);
+                    loading(false);
                     showToast("Please select pdf");
-                } else {
+                }
+                else if (binding.edtPdfName.getText().toString().isEmpty()) {
+                    binding.edtPdfName.setError(getString(R.string.requried));
+                }
+                else {
+                     uploadViewModel.uploadFile(uri, id ,binding.edtPdfName.getText().toString());
 
-                    uploadViewModel.uploadFile(uri, id);
                     loading(true);
                 }
 
             }
         });
+
+        binding.showFiles.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+            navigate(UplaodFragmentDirections.actionUplaodFragmentToShowFilesFragment(id,name));
+            }
+        });
+    }
+
+    private void openExternalFile() {
+        Intent i = new Intent();
+        i.setAction(Intent.ACTION_GET_CONTENT);
+        i.setType(Const.FILE_TYPE);
+        i.addCategory(Intent.CATEGORY_OPENABLE);
+        startActivityForResult(Intent.createChooser(i,"Select PDF Files...."), 0);
     }
 
     private void loading(Boolean isLoading) {
         if (isLoading) {
-            binding.upload.setVisibility(View.INVISIBLE);
+            binding.btnupload.setVisibility(View.INVISIBLE);
+            binding.edtPdfName.setVisibility(View.INVISIBLE);
+            binding.showFiles.setVisibility(View.INVISIBLE);
             binding.progressbar.setVisibility(View.VISIBLE);
         } else {
             binding.progressbar.setVisibility(View.INVISIBLE);
-            binding.upload.setVisibility(View.VISIBLE);
+            binding.edtPdfName.setVisibility(View.VISIBLE);
+            binding.showFiles.setVisibility(View.VISIBLE);
+            binding.btnupload.setVisibility(View.VISIBLE);
 
         }
     }
