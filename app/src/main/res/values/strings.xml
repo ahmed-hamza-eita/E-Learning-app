@@ -34,5 +34,12 @@
     <string name="click_to_select_pdf">Click to select pdf +</string>
     <string name="show_files">View PDF files</string>
     <string name="pdf_name">PDF Name</string>
+    <string name="create_mcq_quiz">Create Mcq Quiz</string>
+    <string name="your_question">Your Question</string>
+    <string name="choose_1">choose 1</string>
+    <string name="choose_2">choose 2</string>
+    <string name="choose_4">choose 4</string>
+    <string name="next_question">Next Question</string>
+    <string name="upload_quiz">Upload Quiz</string>
 
 </resources>

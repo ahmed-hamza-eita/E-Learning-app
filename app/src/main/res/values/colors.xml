@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="primary">#1c2e46</color>
+
+
+    <color name="purple_200">#FF1C2E46</color>
+    <color name="purple_500">#142232</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#000000</color>
+    <color name="teal_700">#004AB1</color>
+
+    <color name="white">#FFFFFFFF</color>
+
+
+
+    <color name="primary">#FF1C2E46</color>
     <color name="primary_drak">#142232</color>
     <color name="primary_text">#212121</color>
     <color name="secondary_text">#757575</color>
@@ -12,6 +24,8 @@
     <color name="background_bottom">#DDDDD6</color>
     <color name="background_container">#D6D6C8</color>
     <color name="black">#000</color>
+    <color name="bacground">#F3F3F3</color>
+    <color name="primaryTextColor">#106FF3</color>
 
 
 </resources>

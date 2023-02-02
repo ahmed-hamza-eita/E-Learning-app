@@ -104,17 +104,21 @@
         <action
             android:id="@+id/action_instructorControlFragment_to_uplaodFragment"
             app:destination="@id/uplaodFragment" />
+        <action
+            android:id="@+id/action_instructorControlFragment_to_createQuizFragment2"
+            app:destination="@id/createQuizFragment" />
     </fragment>
     <fragment
         android:id="@+id/addStudentFragment"
         android:name="com.hamza.e_learningapp.ui.instructor.add_student.AddStudentFragment"
         android:label="fragment_add_student"
         tools:layout="@layout/fragment_add_student" >
-        <argument
-            android:name="courseName"
-            app:argType="string" />
+
         <argument
             android:name="courseId"
+            app:argType="string" />
+        <argument
+            android:name="courseName"
             app:argType="string" />
     </fragment>
     <fragment
@@ -122,6 +126,8 @@
         android:name="com.hamza.e_learningapp.ui.instructor.chat.ChatFragment"
         android:label="ChatFragment"
         tools:layout="@layout/fragment_chat">
+
+
         <argument
             android:name="courseId"
             app:argType="string" />
@@ -149,6 +155,20 @@
         android:name="com.hamza.e_learningapp.ui.instructor.uplaod.showfiles.ShowFilesFragment"
         android:label="fragment_show_files"
         tools:layout="@layout/fragment_show_files" >
+        <argument
+            android:name="courseId"
+            app:argType="string" />
+        <argument
+            android:name="courseName"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/createQuizFragment"
+        android:name="com.hamza.e_learningapp.ui.instructor.quiz.CreateQuizFragment"
+        android:label="fragment_create_quiz"
+        tools:layout="@layout/fragment_create_quiz" >
+
+
         <argument
             android:name="courseId"
             app:argType="string" />

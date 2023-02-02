@@ -78,9 +78,15 @@ public class InstructorControlFragment extends BaseFragment {
         binding.BtnopenMaterials.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                navigate(InstructorControlFragmentDirections.actionInstructorControlFragmentToUplaodFragment(id,name));
+                navigate(InstructorControlFragmentDirections.actionInstructorControlFragmentToUplaodFragment(id, name));
             }
         });
+      binding.BtnopenQuizzz.setOnClickListener(new View.OnClickListener() {
+          @Override
+          public void onClick(View view) {
+           navigate(InstructorControlFragmentDirections.actionInstructorControlFragmentToCreateQuizFragment2(id, name));
+          }
+      });
     }
 
     private void init() {
