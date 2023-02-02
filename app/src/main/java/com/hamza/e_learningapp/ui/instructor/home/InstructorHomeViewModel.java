@@ -11,6 +11,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
 import com.hamza.e_learningapp.data.MySharedPrefrance;
 import com.hamza.e_learningapp.models.ModelCourse;
+import com.hamza.e_learningapp.models.ModelMembers;
 import com.hamza.e_learningapp.utils.Const;
 
 import java.util.ArrayList;
@@ -23,9 +24,15 @@ import dagger.hilt.android.lifecycle.HiltViewModel;
 public class InstructorHomeViewModel extends ViewModel {
     private FirebaseAuth auth;
     private DatabaseReference ref;
-      ArrayList<ModelCourse> courseList = new ArrayList<ModelCourse>();
-    MutableLiveData<ArrayList<ModelCourse>> courseListLiveData = new MutableLiveData<ArrayList<ModelCourse>>();
-    MutableLiveData<String> errorLiveData = new MutableLiveData<String>();
+    //Course
+    public ArrayList<ModelCourse> courseList = new ArrayList<ModelCourse>();
+    public  MutableLiveData<ArrayList<ModelCourse>> courseListLiveData = new MutableLiveData<ArrayList<ModelCourse>>();
+    public   MutableLiveData<String> errorCLiveData = new MutableLiveData<String>();
+
+    //Grades
+    public ArrayList<ModelMembers> gradesList = new ArrayList<ModelMembers>();
+    public MutableLiveData<ArrayList<ModelMembers>> gradesListLiveData = new MutableLiveData<ArrayList<ModelMembers>>();
+    public    MutableLiveData<String> errorGLiveData = new MutableLiveData<String>();
 
     @Inject
     public InstructorHomeViewModel(FirebaseAuth auth, DatabaseReference reference) {
@@ -48,9 +55,26 @@ public class InstructorHomeViewModel extends ViewModel {
 
                     @Override
                     public void onCancelled(@NonNull DatabaseError error) {
-                        errorLiveData.setValue(error.getMessage());
+                        errorCLiveData.setValue(error.getMessage());
                     }
                 });
+    }
+
+    public void getGrades(String courseId) {
+        ref.child(Const.REF_COURSES).child(courseId).child(Const.REF_COURSE_MEMBERS).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot ds : snapshot.getChildren()) {
+                    gradesList.add(ds.getValue(ModelMembers.class));
+                }
+                gradesListLiveData.setValue(gradesList);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                errorGLiveData.setValue(error.getMessage());
+            }
+        });
     }
 
 }

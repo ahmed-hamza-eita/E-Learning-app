@@ -72,7 +72,7 @@ public class InstructorHomeFragment extends BaseFragment {
                 showToast("No Courses");
             }
         });
-        instructorHomeViewModel.errorLiveData.observe(getViewLifecycleOwner(), s -> showToast(s));
+        instructorHomeViewModel.errorCLiveData.observe(getViewLifecycleOwner(), s -> showToast(s));
     }
 
     private void actions() {

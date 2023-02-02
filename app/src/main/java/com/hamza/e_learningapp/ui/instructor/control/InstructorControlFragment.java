@@ -87,6 +87,9 @@ public class InstructorControlFragment extends BaseFragment {
            navigate(InstructorControlFragmentDirections.actionInstructorControlFragmentToCreateQuizFragment2(id, name));
           }
       });
+      binding.BtnopenGrades.setOnClickListener(view -> {
+          navigate(InstructorControlFragmentDirections.actionInstructorControlFragmentToGradesFragment(id,name));
+      });
     }
 
     private void init() {

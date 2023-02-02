@@ -17,7 +17,7 @@ import com.hamza.e_learningapp.adapters.AdapterChat;
 import com.hamza.e_learningapp.data.MySharedPrefrance;
 import com.hamza.e_learningapp.databinding.FragmentChatBinding;
 import com.hamza.e_learningapp.models.ModelChat;
-import com.hamza.e_learningapp.ui.instructor.chat.ChatFragmentArgs;
+import com.hamza.e_learningapp.ui.chat.ChatFragmentArgs;
 
 import java.util.ArrayList;
 
