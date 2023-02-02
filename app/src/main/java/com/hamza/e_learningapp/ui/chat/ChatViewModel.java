@@ -1,4 +1,4 @@
-package com.hamza.e_learningapp.ui.instructor.chat;
+package com.hamza.e_learningapp.ui.chat;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.MutableLiveData;

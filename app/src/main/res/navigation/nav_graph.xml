@@ -114,25 +114,26 @@
         android:label="fragment_add_student"
         tools:layout="@layout/fragment_add_student" >
 
-        <argument
-            android:name="courseId"
-            app:argType="string" />
+
         <argument
             android:name="courseName"
+            app:argType="string" />
+        <argument
+            android:name="courseId"
             app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/chatFragment"
-        android:name="com.hamza.e_learningapp.ui.instructor.chat.ChatFragment"
+        android:name="com.hamza.e_learningapp.ui.chat.ChatFragment"
         android:label="ChatFragment"
         tools:layout="@layout/fragment_chat">
 
 
         <argument
-            android:name="courseId"
+            android:name="courseName"
             app:argType="string" />
         <argument
-            android:name="courseName"
+            android:name="courseId"
             app:argType="string" />
     </fragment>
     <fragment
@@ -140,26 +141,28 @@
         android:name="com.hamza.e_learningapp.ui.instructor.uplaod.UplaodFragment"
         android:label="fragment_uplaod"
         tools:layout="@layout/fragment_uplaod" >
-        <argument
-            android:name="courseId"
-            app:argType="string" />
-        <argument
-            android:name="courseName"
-            app:argType="string" />
+
         <action
             android:id="@+id/action_uplaodFragment_to_showFilesFragment"
             app:destination="@id/showFilesFragment" />
+        <argument
+            android:name="courseName"
+            app:argType="string" />
+        <argument
+            android:name="courseId"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/showFilesFragment"
         android:name="com.hamza.e_learningapp.ui.instructor.uplaod.showfiles.ShowFilesFragment"
         android:label="fragment_show_files"
         tools:layout="@layout/fragment_show_files" >
-        <argument
-            android:name="courseId"
-            app:argType="string" />
+
         <argument
             android:name="courseName"
+            app:argType="string" />
+        <argument
+            android:name="courseId"
             app:argType="string" />
     </fragment>
     <fragment
@@ -170,10 +173,10 @@
 
 
         <argument
-            android:name="courseId"
+            android:name="courseName"
             app:argType="string" />
         <argument
-            android:name="courseName"
+            android:name="courseId"
             app:argType="string" />
     </fragment>
 </navigation>
