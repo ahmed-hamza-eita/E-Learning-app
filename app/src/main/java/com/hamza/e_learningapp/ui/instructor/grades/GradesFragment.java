@@ -54,6 +54,7 @@ public class GradesFragment extends BaseFragment {
         loading(true);
         instructorGradesViewModel.getGrades(id);
         observers();
+
     }
 
     private void observers() {
@@ -90,3 +91,4 @@ public class GradesFragment extends BaseFragment {
         binding = null;
     }
 }
+
