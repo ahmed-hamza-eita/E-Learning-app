@@ -110,6 +110,9 @@
         <action
             android:id="@+id/action_instructorControlFragment_to_gradesFragment"
             app:destination="@id/gradesFragment" />
+        <action
+            android:id="@+id/action_instructorControlFragment_to_attendFragment"
+            app:destination="@id/attendFragment" />
     </fragment>
     <fragment
         android:id="@+id/addStudentFragment"
@@ -187,6 +190,18 @@
         android:name="com.hamza.e_learningapp.ui.instructor.grades.GradesFragment"
         android:label="fragment_grades"
         tools:layout="@layout/fragment_grades" >
+        <argument
+            android:name="courseName"
+            app:argType="string" />
+        <argument
+            android:name="courseId"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/attendFragment"
+        android:name="com.hamza.e_learningapp.ui.instructor.attendance.AttendFragment"
+        android:label="fragment_attend"
+        tools:layout="@layout/fragment_attend" >
         <argument
             android:name="courseName"
             app:argType="string" />

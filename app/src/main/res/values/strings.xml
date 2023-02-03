@@ -41,5 +41,6 @@
     <string name="choose_4">choose 4</string>
     <string name="next_question">Next Question</string>
     <string name="upload_quiz">Upload Quiz</string>
+    <string name="generate_code">Generate Code</string>
 
 </resources>
