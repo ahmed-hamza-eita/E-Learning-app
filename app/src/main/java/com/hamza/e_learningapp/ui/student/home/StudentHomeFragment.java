@@ -88,28 +88,26 @@ public class StudentHomeFragment extends BaseFragment {
     }
 
     private void actions() {
-        binding.btnAddCourse.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String id = binding.enterCourseId.getText().toString().trim();
-                if (id.isEmpty()) {
-                    binding.enterCourseId.setError(getString(R.string.requried));
-                } else {
-                    loading(true);
-                    studentHomeViewModel.enrollToCourse(id);
+        binding.btnAddCourse.setOnClickListener(view -> {
+            String id = binding.enterCourseId.getText().toString().trim();
+            if (id.isEmpty()) {
+                binding.enterCourseId.setError(getString(R.string.requried));
+            } else {
+                loading(true);
+                studentHomeViewModel.enrollToCourse(id);
 
-                }
             }
         });
-        binding.imgLogOut.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                MySharedPrefrance.clear();
-                FirebaseAuth.getInstance().signOut();
-                Intent intent = new Intent(mFragmentActivity, MainActivity.class);
-                startActivity(intent);
-                mFragmentActivity.finishAffinity();
-            }
+        binding.imgLogOut.setOnClickListener(view -> {
+            MySharedPrefrance.clear();
+            FirebaseAuth.getInstance().signOut();
+            Intent intent = new Intent(mFragmentActivity, MainActivity.class);
+            startActivity(intent);
+            mFragmentActivity.finishAffinity();
+        });
+
+        adapterCourses.setOnItemClick((name, id) -> {
+            navigate(StudentHomeFragmentDirections.actionStudentHomeFragmentToControlStdFragment(name, id));
         });
     }
 

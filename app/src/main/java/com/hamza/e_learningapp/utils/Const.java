@@ -19,4 +19,6 @@ public class Const {
     public static final String FILE_TYPE = "application/pdf";
     public static final String REF_QUIZ = "Quiz";
     public static final String REF_ATTENDANCE = "Attendance";
+    public static final String ATTENDANCE_GRADES = "attendanceGrade";
+
 }

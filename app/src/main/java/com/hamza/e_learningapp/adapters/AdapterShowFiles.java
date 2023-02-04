@@ -8,6 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.hamza.e_learningapp.databinding.ItemCoursesBinding;
+import com.hamza.e_learningapp.databinding.ItemViewMaterialsBinding;
 import com.hamza.e_learningapp.models.ModelPDF;
 
 import java.util.ArrayList;
@@ -28,8 +29,8 @@ public class AdapterShowFiles extends RecyclerView.Adapter<AdapterShowFiles.Hold
     @NonNull
     @Override
     public Holder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        ItemCoursesBinding binding;
-        binding = ItemCoursesBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false);
+        ItemViewMaterialsBinding binding;
+        binding = ItemViewMaterialsBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false);
         return new Holder(binding);
     }
 
@@ -44,9 +45,9 @@ public class AdapterShowFiles extends RecyclerView.Adapter<AdapterShowFiles.Hold
     }
 
     class Holder extends RecyclerView.ViewHolder {
-        ItemCoursesBinding binding;
+        ItemViewMaterialsBinding binding;
 
-        public Holder(ItemCoursesBinding binding) {
+        public Holder(ItemViewMaterialsBinding binding) {
             super(binding.getRoot());
             this.binding = binding;
             if (onClick != null) {

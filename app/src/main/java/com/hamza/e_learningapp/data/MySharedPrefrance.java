@@ -87,5 +87,9 @@ public class MySharedPrefrance {
         SharedPreferences.Editor editor = getSharedPreferences().edit();
         editor.clear();
         editor.apply();
+        setUserEmail("");
+        setUserId("");
+        setUserName("");
+        setUserType("");
     }
 }

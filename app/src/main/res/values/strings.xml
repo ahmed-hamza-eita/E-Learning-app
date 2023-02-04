@@ -42,5 +42,8 @@
     <string name="next_question">Next Question</string>
     <string name="upload_quiz">Upload Quiz</string>
     <string name="generate_code">Generate Code</string>
+    <string name="chat">Chat</string>
+    <string name="solve_quiz">Solve quiz</string>
+    <string name="active">Active</string>
 
 </resources>

@@ -78,7 +78,11 @@
         android:id="@+id/studentHomeFragment"
         android:name="com.hamza.e_learningapp.ui.student.home.StudentHomeFragment"
         android:label="fragment_student_home"
-        tools:layout="@layout/fragment_student_home" />
+        tools:layout="@layout/fragment_student_home" >
+        <action
+            android:id="@+id/action_studentHomeFragment_to_controlStdFragment"
+            app:destination="@id/controlStdFragment" />
+    </fragment>
     <fragment
         android:id="@+id/createCourseFragment"
         android:name="com.hamza.e_learningapp.ui.instructor.create_course.CreateCourseFragment"
@@ -202,6 +206,36 @@
         android:name="com.hamza.e_learningapp.ui.instructor.attendance.AttendFragment"
         android:label="fragment_attend"
         tools:layout="@layout/fragment_attend" >
+        <argument
+            android:name="courseName"
+            app:argType="string" />
+        <argument
+            android:name="courseId"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/controlStdFragment"
+        android:name="com.hamza.e_learningapp.ui.student.control.ControlStdFragment"
+        android:label="fragment_control_std"
+        tools:layout="@layout/fragment_control_std" >
+        <argument
+            android:name="courseName"
+            app:argType="string" />
+        <argument
+            android:name="courseId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_controlStdFragment_to_chatFragment"
+            app:destination="@id/chatFragment" />
+        <action
+            android:id="@+id/action_controlStdFragment_to_viewMaterialsFragment"
+            app:destination="@id/viewMaterialsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewMaterialsFragment"
+        android:name="com.hamza.e_learningapp.ui.student.materials.ViewMaterialsFragment"
+        android:label="fragment_view_materials"
+        tools:layout="@layout/fragment_view_materials" >
         <argument
             android:name="courseName"
             app:argType="string" />
