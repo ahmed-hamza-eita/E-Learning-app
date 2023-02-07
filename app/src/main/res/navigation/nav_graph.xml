@@ -164,7 +164,7 @@
     </fragment>
     <fragment
         android:id="@+id/showFilesFragment"
-        android:name="com.hamza.e_learningapp.ui.instructor.uplaod.showfiles.ShowFilesFragment"
+        android:name="com.hamza.e_learningapp.ui.showfiles.ShowFilesFragment"
         android:label="fragment_show_files"
         tools:layout="@layout/fragment_show_files" >
 
@@ -228,19 +228,52 @@
             android:id="@+id/action_controlStdFragment_to_chatFragment"
             app:destination="@id/chatFragment" />
         <action
-            android:id="@+id/action_controlStdFragment_to_viewMaterialsFragment"
-            app:destination="@id/viewMaterialsFragment" />
+            android:id="@+id/action_controlStdFragment_to_stdViewGradesFragment"
+            app:destination="@id/stdViewGradesFragment" />
+        <action
+            android:id="@+id/action_controlStdFragment_to_availableQuizesFragment"
+            app:destination="@id/availableQuizesFragment" />
+        <action
+            android:id="@+id/action_controlStdFragment_to_showFilesFragment"
+            app:destination="@id/showFilesFragment" />
     </fragment>
     <fragment
-        android:id="@+id/viewMaterialsFragment"
-        android:name="com.hamza.e_learningapp.ui.student.materials.ViewMaterialsFragment"
-        android:label="fragment_view_materials"
-        tools:layout="@layout/fragment_view_materials" >
+        android:id="@+id/stdViewGradesFragment"
+        android:name="com.hamza.e_learningapp.ui.student.grades.StdViewGradesFragment"
+        android:label="fragment_std_view_grades"
+        tools:layout="@layout/fragment_std_view_grades" >
         <argument
             android:name="courseName"
             app:argType="string" />
         <argument
             android:name="courseId"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/availableQuizesFragment"
+        android:name="com.hamza.e_learningapp.ui.student.solve_quiz.AvailableQuizesFragment"
+        android:label="fragment_available_quizes"
+        tools:layout="@layout/fragment_available_quizes" >
+        <argument
+            android:name="courseName"
+            app:argType="string" />
+        <argument
+            android:name="courseId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_availableQuizesFragment_to_solveQuizFragment"
+            app:destination="@id/solveQuizFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/solveQuizFragment"
+        android:name="com.hamza.e_learningapp.ui.student.solve_quiz.SolveQuizFragment"
+        android:label="fragment_solve_quiz"
+        tools:layout="@layout/fragment_solve_quiz" >
+        <argument
+            android:name="courseName"
+            app:argType="string" />
+        <argument
+            android:name="quizId"
             app:argType="string" />
     </fragment>
 </navigation>

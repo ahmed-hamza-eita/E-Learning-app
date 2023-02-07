@@ -86,7 +86,7 @@ public class UplaodFragment extends BaseFragment {
                     .load();
             binding.imgUplaod.setVisibility(View.GONE);
             binding.txtAdd.setVisibility(View.GONE);
-            binding.edtPdfName.setVisibility(View.VISIBLE);
+      //      binding.edtPdfName.setVisibility(View.VISIBLE);
         }
     }
 
@@ -113,11 +113,11 @@ public class UplaodFragment extends BaseFragment {
                     loading(false);
                     showToast("Please select pdf");
                 }
-                else if (binding.edtPdfName.getText().toString().isEmpty()) {
-                    binding.edtPdfName.setError(getString(R.string.requried));
-                }
+//                else if (binding.edtPdfName.getText().toString().isEmpty()) {
+//                    binding.edtPdfName.setError(getString(R.string.requried));
+//                }
                 else {
-                     uploadViewModel.uploadFile(uri, id ,binding.edtPdfName.getText().toString());
+                     uploadViewModel.uploadFile(uri, id  );
 
                     loading(true);
                 }
@@ -128,7 +128,7 @@ public class UplaodFragment extends BaseFragment {
         binding.showFiles.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-            navigate(UplaodFragmentDirections.actionUplaodFragmentToShowFilesFragment(id,name));
+            navigate(UplaodFragmentDirections.actionUplaodFragmentToShowFilesFragment(name,id));
             }
         });
     }
@@ -144,12 +144,12 @@ public class UplaodFragment extends BaseFragment {
     private void loading(Boolean isLoading) {
         if (isLoading) {
             binding.btnupload.setVisibility(View.INVISIBLE);
-            binding.edtPdfName.setVisibility(View.INVISIBLE);
+          //  binding.edtPdfName.setVisibility(View.INVISIBLE);
             binding.showFiles.setVisibility(View.INVISIBLE);
             binding.progressbar.setVisibility(View.VISIBLE);
         } else {
             binding.progressbar.setVisibility(View.INVISIBLE);
-            binding.edtPdfName.setVisibility(View.VISIBLE);
+            //binding.edtPdfName.setVisibility(View.VISIBLE);
             binding.showFiles.setVisibility(View.VISIBLE);
             binding.btnupload.setVisibility(View.VISIBLE);
 

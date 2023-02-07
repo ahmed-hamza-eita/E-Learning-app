@@ -5,8 +5,6 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.view.LayoutInflater;
@@ -20,11 +18,8 @@ import com.hamza.e_learningapp.R;
 import com.hamza.e_learningapp.adapters.AdapterCourses;
 import com.hamza.e_learningapp.data.MySharedPrefrance;
 import com.hamza.e_learningapp.databinding.FragmentStudentHomeBinding;
-import com.hamza.e_learningapp.models.ModelCourse;
 import com.hamza.e_learningapp.ui.instructor.add_student.AddStudentViewModel;
 import com.hamza.e_learningapp.utils.Helper;
-
-import java.util.ArrayList;
 
 import dagger.hilt.android.AndroidEntryPoint;
 
@@ -71,6 +66,8 @@ public class StudentHomeFragment extends BaseFragment {
             } else {
                 addStudentViewModel.addStudent(Helper.removeDot(MySharedPrefrance.getUserEmail()), binding.enterCourseId.getText().toString(), s);
                 binding.enterCourseId.setText("");
+                loading(false);
+                binding.enterCourseId.clearFocus();
                 studentHomeViewModel.enrollLiveData.setValue("");
             }
         });
@@ -78,13 +75,17 @@ public class StudentHomeFragment extends BaseFragment {
             loading(false);
             if (modelCourses.size() == 0) {
                 showToast("No courses");
+                return;
 
             } else {
                 adapterCourses.setList(modelCourses);
                 binding.recyclerViewStudentAddCourses.setAdapter(adapterCourses);
             }
         });
-        studentHomeViewModel.errorLiveData.observe(getViewLifecycleOwner(), s -> showToast(s));
+        studentHomeViewModel.errorLiveData.observe(getViewLifecycleOwner(), s -> {
+            showToast(s);
+            loading(false);
+        });
     }
 
     private void actions() {

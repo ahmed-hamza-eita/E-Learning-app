@@ -29,16 +29,8 @@ public class CreateQuizViewModel extends ViewModel {
     }
 
     public void uploadQuiz(ArrayList<ModelQuiz> list, String courseId) {
-        ref.child(Const.REF_QUIZ).child(courseId).push().setValue(list).addOnSuccessListener(new OnSuccessListener<Void>() {
-            @Override
-            public void onSuccess(Void unused) {
-                msg.setValue(Const.kEY_SUCCESS);
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                msg.setValue(e.getLocalizedMessage());
-            }
-        });
+
+        ref.child(Const.REF_QUIZ).child(courseId).push().setValue(list).addOnSuccessListener(unused ->
+                msg.setValue(Const.kEY_SUCCESS)).addOnFailureListener(e -> msg.setValue(e.getLocalizedMessage()));
     }
 }

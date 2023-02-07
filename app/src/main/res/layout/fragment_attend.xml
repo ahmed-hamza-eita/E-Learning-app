@@ -26,7 +26,7 @@
 
             <TextView
                 android:id="@+id/txtCode"
-                android:layout_width="@dimen/_140sdp"
+                android:layout_width="@dimen/_120sdp"
                 android:layout_height="@dimen/_50sdp"
                 android:layout_margin="@dimen/_8sdp"
                 android:background="@drawable/background_textview"
@@ -37,12 +37,12 @@
             <Button
                 android:id="@+id/btnGenerateCode"
                 android:layout_width="wrap_content"
-                android:layout_height="@dimen/_50sdp"
+                android:layout_height="wrap_content"
                 android:layout_margin="@dimen/_8sdp"
                 android:background="@drawable/background_textview"
                 android:text="@string/generate_code"
                 android:textAllCaps="false"
-                android:textSize="@dimen/_13ssp" />
+                android:textSize="@dimen/_12ssp" />
 
 
         </LinearLayout>
@@ -84,7 +84,7 @@
 
     <Button
         android:id="@+id/BtnConfirm"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/_25sdp"
         android:background="@drawable/ba_btn"

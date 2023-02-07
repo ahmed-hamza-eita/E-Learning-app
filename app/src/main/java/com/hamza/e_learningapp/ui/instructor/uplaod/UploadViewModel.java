@@ -33,7 +33,7 @@ public class UploadViewModel extends ViewModel {
         ref = reff;
     }
 
-    public void uploadFile(Uri path, String courseID,String name) {
+    public void uploadFile(Uri path, String courseID ) {
         if (path != null) {
             sRef = storage.child("Files/" + courseID + "/"   + System.currentTimeMillis() );
             sRef.putFile(path).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
@@ -44,8 +44,8 @@ public class UploadViewModel extends ViewModel {
                         @Override
                         public void onSuccess(Uri uri) {
                             String pathF = uri.toString();
-                            ModelPDF model=new ModelPDF (pathF,courseID,name);
-                            ref.child(Const.REF_FILES).child(courseID).push().setValue(model);
+                          //  ModelPDF model=new ModelPDF (pathF,courseID,name);
+                            ref.child(Const.REF_FILES).child(courseID).push().setValue(pathF);
                             uploadLiveData.setValue(Const.kEY_SUCCESS);
                         }
                     });

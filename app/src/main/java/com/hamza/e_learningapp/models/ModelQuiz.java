@@ -1,14 +1,15 @@
 package com.hamza.e_learningapp.models;
-
 public class ModelQuiz {
-    String question, answer1, answer2, answer3, answer4;
-    int rightAnswer;
 
-    public ModelQuiz() {
-    }
+    String question ;
+    String answer1 ;
+    String answer2 ;
+    String answer3 ;
+    String answer4 ;
+    int rightAnswer ;
 
+    public ModelQuiz (){}
     public ModelQuiz(String question, String answer1, String answer2, String answer3, String answer4, int rightAnswer) {
-
         this.question = question;
         this.answer1 = answer1;
         this.answer2 = answer2;

@@ -1,7 +1,5 @@
 package com.hamza.e_learningapp.ui.student.home;
 
-import android.view.View;
-
 import androidx.annotation.NonNull;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;

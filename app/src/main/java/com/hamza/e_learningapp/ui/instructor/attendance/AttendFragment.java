@@ -45,7 +45,7 @@ public class AttendFragment extends BaseFragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        onClicks();
+        actions();
         observers();
     }
 
@@ -59,7 +59,7 @@ public class AttendFragment extends BaseFragment {
         });
     }
 
-    private void onClicks() {
+    private void actions() {
         binding.btnGenerateCode.setOnClickListener(view -> {
             attendanceCode = Helper.generateCode();
             binding.txtCode.setText(attendanceCode + "");

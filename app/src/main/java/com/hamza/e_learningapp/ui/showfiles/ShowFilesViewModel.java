@@ -1,4 +1,4 @@
-package com.hamza.e_learningapp.ui.instructor.uplaod.showfiles;
+package com.hamza.e_learningapp.ui.showfiles;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.MutableLiveData;
@@ -13,6 +13,7 @@ import com.hamza.e_learningapp.models.ModelPDF;
 import com.hamza.e_learningapp.utils.Const;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.inject.Inject;
 
@@ -20,29 +21,30 @@ import dagger.hilt.android.lifecycle.HiltViewModel;
 
 @HiltViewModel
 public class ShowFilesViewModel extends ViewModel {
-    private ArrayList<ModelPDF> files = new ArrayList<ModelPDF>();
     private DatabaseReference ref;
-    private StorageReference storage;
+    private ArrayList<String> files = new ArrayList<String>();
     MutableLiveData<String> e = new MutableLiveData<String>();
-    MutableLiveData<ArrayList<ModelPDF>> filesLiveData = new MutableLiveData<ArrayList<ModelPDF>>();
+    MutableLiveData<List<String>> filesLiveData = new MutableLiveData<List<String>>();
 
     @Inject
-    public ShowFilesViewModel(DatabaseReference reff, StorageReference storagee) {
+    public ShowFilesViewModel(DatabaseReference reff) {
         this.ref = reff;
-        this.storage = storagee;
+
     }
 
     public void getFiles(String id) {
         ref.child(Const.REF_FILES).child(id).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
+            public void onDataChange(@NonNull DataSnapshot snapshot){
+
                 if (snapshot.getValue() != null) {
-                    for (DataSnapshot ds : snapshot.getChildren()) {
-                        files.add(ds.getValue(ModelPDF.class));
+                    for (DataSnapshot snapshot1 : snapshot.getChildren()) {
+                        files.add(snapshot1.getValue(String.class));
                     }
                     filesLiveData.setValue(files);
-                }
-            }
+                }else {
+                    e.setValue("No Material");
+                }}
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {

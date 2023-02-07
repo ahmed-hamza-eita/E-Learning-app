@@ -1,39 +1,22 @@
-package com.hamza.e_learningapp.ui.instructor.uplaod.showfiles;
+package com.hamza.e_learningapp.ui.showfiles;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import android.widget.TextView;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.hamza.e_learningapp.BaseFragment;
-import com.hamza.e_learningapp.R;
 import com.hamza.e_learningapp.adapters.AdapterShowFiles;
 import com.hamza.e_learningapp.databinding.FragmentShowFilesBinding;
-import com.hamza.e_learningapp.models.ModelPDF;
-import com.hamza.e_learningapp.utils.Const;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 import java.util.List;
 
 import dagger.hilt.android.AndroidEntryPoint;
@@ -67,23 +50,22 @@ public class ShowFilesFragment extends BaseFragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
+        loading(true);
         actions();
         observers();
     }
 
     private void observers() {
-        loading(true);
-        showFilesViewModel.getFiles(id);
-        showFilesViewModel.filesLiveData.observe(getViewLifecycleOwner(), new Observer<ArrayList<ModelPDF>>() {
-            @Override
-            public void onChanged(ArrayList<ModelPDF> modelPDFS) {
-                loading(false);
-                if (modelPDFS != null) {
-                    adapterShowFiles.setFileList(modelPDFS);
-                    binding.recyclerviewShowFiles.setAdapter(adapterShowFiles);
 
-                }
+
+        showFilesViewModel.getFiles(id);
+        showFilesViewModel.filesLiveData.observe(getViewLifecycleOwner(), new Observer<List<String>>() {
+            @Override
+            public void onChanged(List<String> strings) {
+                adapterShowFiles.setFileList(strings);
+                binding.recyclerviewShowFiles.setAdapter(adapterShowFiles);
+                loading(false);
+
             }
         });
         showFilesViewModel.e.observe(getViewLifecycleOwner(), new Observer<String>() {
@@ -96,7 +78,7 @@ public class ShowFilesFragment extends BaseFragment {
     }
 
     private void actions() {
-        adapterShowFiles.setOnClick(new AdapterShowFiles.onClick() {
+        adapterShowFiles.setOnClick(new AdapterShowFiles.OnClick() {
             @Override
             public void onItemClick(String name) {
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(name));

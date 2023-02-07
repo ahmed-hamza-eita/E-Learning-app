@@ -4,27 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.showfiles.ShowFilesFragment">
+    tools:context=".ui.student.solve_quiz.AvailableQuizesFragment">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerAvailableQuzes"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:elevation="@dimen/_12sdp"
+        android:layout_margin="@dimen/_8sdp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerviewShowFiles"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="@dimen/_12sdp"
-            android:elevation="@dimen/_12sdp"
-            android:padding="@dimen/_8sdp"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
-
-    </androidx.cardview.widget.CardView>
-
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <RelativeLayout
         android:id="@+id/progressbar"
@@ -32,14 +26,16 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:layout_gravity="center"
+        android:layout_marginTop="321dp"
         android:background="@drawable/back_progressbar"
         android:elevation="5dp"
+        android:gravity="bottom"
         android:padding="20dp"
         android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="@+id/cardView"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/cardView">
+        app:layout_constraintTop_toTopOf="@+id/recyclerAvailableQuzes">
 
         <ProgressBar
             android:layout_width="30dp"
@@ -47,5 +43,15 @@
             android:layout_centerInParent="true" />
     </RelativeLayout>
 
+    <ImageView
+        android:id="@+id/noQuizzes"
+        android:layout_width="@dimen/_150sdp"
+        android:layout_height="@dimen/_150sdp"
+        android:src="@drawable/nofiles"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

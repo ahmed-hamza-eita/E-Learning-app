@@ -12,17 +12,18 @@ import com.hamza.e_learningapp.databinding.ItemViewMaterialsBinding;
 import com.hamza.e_learningapp.models.ModelPDF;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class AdapterShowFiles extends RecyclerView.Adapter<AdapterShowFiles.Holder> {
-    private ArrayList<ModelPDF> fileList;
+    private List<String> fileList;
 
-    public void setFileList(ArrayList<ModelPDF> fileList) {
+    public void setFileList(List<String> fileList) {
         this.fileList = fileList;
     }
 
-    private onClick onClick;
+    private OnClick onClick;
 
-    public void setOnClick(AdapterShowFiles.onClick onClick) {
+    public void setOnClick(OnClick onClick) {
         this.onClick = onClick;
     }
 
@@ -36,7 +37,7 @@ public class AdapterShowFiles extends RecyclerView.Adapter<AdapterShowFiles.Hold
 
     @Override
     public void onBindViewHolder(@NonNull Holder holder, int position) {
-        holder.binding.courseName.setText(fileList.get(position).getName());
+        holder.binding.courseName.setText("Material " + (position + 1));
     }
 
     @Override
@@ -54,14 +55,14 @@ public class AdapterShowFiles extends RecyclerView.Adapter<AdapterShowFiles.Hold
                 binding.getRoot().setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        onClick.onItemClick(fileList.get(getAdapterPosition()).getUri());
+                        onClick.onItemClick(fileList.get(getAdapterPosition()));
                     }
                 });
             }
         }
     }
 
-    public interface onClick {
+    public interface OnClick {
         void onItemClick(String name);
     }
 }

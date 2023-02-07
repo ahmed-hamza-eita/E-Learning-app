@@ -5,9 +5,6 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.view.LayoutInflater;
@@ -17,13 +14,9 @@ import android.view.ViewGroup;
 import com.google.firebase.auth.FirebaseAuth;
 import com.hamza.e_learningapp.BaseFragment;
 import com.hamza.e_learningapp.MainActivity;
-import com.hamza.e_learningapp.R;
 import com.hamza.e_learningapp.adapters.AdapterCourses;
 import com.hamza.e_learningapp.data.MySharedPrefrance;
 import com.hamza.e_learningapp.databinding.FragmentInstructorHomeBinding;
-import com.hamza.e_learningapp.models.ModelCourse;
-
-import java.util.ArrayList;
 
 import dagger.hilt.android.AndroidEntryPoint;
 

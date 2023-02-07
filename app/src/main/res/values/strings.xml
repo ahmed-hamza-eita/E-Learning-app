@@ -45,5 +45,10 @@
     <string name="chat">Chat</string>
     <string name="solve_quiz">Solve quiz</string>
     <string name="active">Active</string>
+    <string name="your_grades_quiz">Your Grades Quiz</string>
+    <string name="total_grades_in_all_quizes">Total grades in all quizes : </string>
+    <string name="total_attendance_grades">Total Attendance Grades : </string>
+    <string name="your_attendance_grades">Your Attendance Grades</string>
+    <string name="the_question">The question</string>
 
 </resources>

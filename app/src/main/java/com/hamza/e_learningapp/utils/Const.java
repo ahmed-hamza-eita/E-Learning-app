@@ -1,7 +1,6 @@
 package com.hamza.e_learningapp.utils;
 
 public class Const {
-    public static final CharSequence KEY_TEXT_COPY ="copy id" ;
     public static String kEY_USER_TYPE = "";
     public static final String kEY_STUDENT = "Student";
     public static final String kEY_INSTRUCTOR = "Instructor";
@@ -20,5 +19,8 @@ public class Const {
     public static final String REF_QUIZ = "Quiz";
     public static final String REF_ATTENDANCE = "Attendance";
     public static final String ATTENDANCE_GRADES = "attendanceGrade";
+
+    public static final String REF_QUIZ_ANSWER  = "quiz answer" ;
+
 
 }
