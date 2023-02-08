@@ -17,7 +17,7 @@
     *Firebase (Authentication, Database, Storage )
     *ViewBinding 
     *Dependency Injection 
-    *Sdp/Ssp (Responsive design) (https://github.com/intuit/ssp) 
+    *[Sdp/Ssp (Responsive design)](https://github.com/intuit/ssp) 
     *Glide (Image loading)
     *Design with XML
  
