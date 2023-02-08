@@ -58,6 +58,7 @@ public class InstructorControlFragment extends BaseFragment {
             @Override
             public void onClick(View view) {
                 ClipboardManager cm = (ClipboardManager) mContext.getSystemService(Context.CLIPBOARD_SERVICE);
+                cm.setText(binding.courseId.getText().toString());
                 showToast("Copied");
             }
         });

@@ -270,7 +270,7 @@
         android:label="fragment_solve_quiz"
         tools:layout="@layout/fragment_solve_quiz" >
         <argument
-            android:name="courseName"
+            android:name="courseId"
             app:argType="string" />
         <argument
             android:name="quizId"

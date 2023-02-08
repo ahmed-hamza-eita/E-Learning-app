@@ -34,7 +34,7 @@ public class AdapterQuizes extends RecyclerView.Adapter<AdapterQuizes.Holder> {
 
     @Override
     public void onBindViewHolder(@NonNull Holder holder, int position) {
-        holder.binding.txtQuizName.setText("Quiz " + list.get(position + 1));
+       holder.binding.txtQuizName.setText("Quiz " + list.get(position ));
     }
 
     @Override

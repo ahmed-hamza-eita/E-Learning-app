@@ -31,7 +31,7 @@ public class CreateQuizFragment extends BaseFragment {
     private FragmentCreateQuizBinding binding;
     private int rightAns = 0;
     private ArrayList<ModelQuiz> quizList;
-    private String courseId;
+    private String courseId,courseName;
     private CreateQuizViewModel createQuizViewModel;
 
     @Override
@@ -39,6 +39,7 @@ public class CreateQuizFragment extends BaseFragment {
         super.onCreate(savedInstanceState);
         quizList = new ArrayList<>();
         courseId = CreateQuizFragmentArgs.fromBundle(getArguments()).getCourseId();
+        courseName = CreateQuizFragmentArgs.fromBundle(getArguments()).getCourseName();
         createQuizViewModel = new ViewModelProvider(this).get(CreateQuizViewModel.class);
     }
 
@@ -75,7 +76,7 @@ public class CreateQuizFragment extends BaseFragment {
                 showToast("You must add at least one question");
             } else {
                 loading(true);
-                createQuizViewModel.uploadQuiz(quizList, courseId);
+                createQuizViewModel.uploadQuiz(quizList, courseName);
 
 
             }

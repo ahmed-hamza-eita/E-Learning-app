@@ -60,7 +60,7 @@ public class InstructorHomeFragment extends BaseFragment {
                 adapterCourses.setList(modelCourses);
                 binding.recyclerInstructorCourse.setAdapter(adapterCourses);
 
-            } else {
+            } else if(modelCourses.size()==0){
                 loading(false);
                 showToast("No Courses");
             }

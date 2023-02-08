@@ -73,12 +73,13 @@ public class AvailableQuizesFragment extends BaseFragment {
            public void onChanged(List<String> strings) {
                adapter.setList(strings);
                binding.recyclerAvailableQuzes.setAdapter(adapter);
+               loading(false);
            }
        });
 
         viewModel.checkIfUserAnsweredLiveData.observe(getViewLifecycleOwner(), aBoolean -> {
             if (aBoolean) {
-                showToast("You have answered all the quizzes");
+                showToast("You have answered on this quiz");
             } else {
                 navigate(AvailableQuizesFragmentDirections.actionAvailableQuizesFragmentToSolveQuizFragment(id, quizId));
             }

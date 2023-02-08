@@ -46,7 +46,7 @@ public class SolveQuizViewModel extends ViewModel {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 allQuizList.clear();
-                ref.getKey();
+
                 if (snapshot.getValue() != null) {
                     for (DataSnapshot ds : snapshot.getChildren()) {
                         allQuizList.add(ds.getKey());

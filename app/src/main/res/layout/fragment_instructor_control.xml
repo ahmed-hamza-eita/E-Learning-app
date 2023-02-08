@@ -58,13 +58,13 @@
         android:id="@+id/courseId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
         android:padding="@dimen/_5sdp"
         android:textColor="@color/black"
         android:textSize="@dimen/_12ssp"
-        android:layout_marginTop="@dimen/_8sdp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/card4"
-        app:layout_constraintEnd_toEndOf="parent"
 
         />
 
@@ -74,11 +74,10 @@
         android:layout_height="wrap_content"
         android:padding="@dimen/_5sdp"
         android:src="@drawable/copy_24"
-        android:layout_marginTop="@dimen/_6sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/courseId"
         app:layout_constraintStart_toEndOf="@id/courseId"
-        app:layout_constraintTop_toTopOf="@id/courseId"
-        app:layout_constraintBottom_toBottomOf="@id/courseId"
-        />
+
+        app:layout_constraintTop_toTopOf="@id/courseId" />
 
 
     <androidx.cardview.widget.CardView
