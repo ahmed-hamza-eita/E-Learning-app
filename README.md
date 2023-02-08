@@ -27,4 +27,4 @@
   
 ## Screenshots
 
-<img src="https://user-images.githubusercontent.com/80759221/217429013-22bb52e6-993c-43b2-b48f-5032e569caf5.jpg" width="200" height="200">
+<img src="https://user-images.githubusercontent.com/80759221/217429013-22bb52e6-993c-43b2-b48f-5032e569caf5.jpg" width="314" height="67">
