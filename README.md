@@ -5,5 +5,6 @@
 
 ## Features
    ### For Instructor
-       Innstructor can create online courses and control for this course by creating quizzes,upload materials, set degrees for attendance and quizess
+       *Innstructor can create online courses  
+       *Control for this course by creating quizzes,upload materials, set degrees for attendance of students and quizess
    
