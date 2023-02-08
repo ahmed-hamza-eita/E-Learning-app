@@ -3,7 +3,7 @@
 
 ## Features
    ### For Instructor
-       *Innstructor can create online courses  
+       *Instructor can create online courses  
        *Control for this course by creating quizzes,upload materials,set degrees for attendance of students and quizess
        *Chat with his students
        
