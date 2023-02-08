@@ -23,7 +23,7 @@
     *Glide for Image loading
     *Design with XML
     
- ## Gallery   
+ ## Screenshots   
     ### For Instructor
     
         
