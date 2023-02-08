@@ -1,10 +1,10 @@
-## E-Learning-app
+# E-Learning-app
    Using this app, you can create courses,quizzes and materials for the subject content and share them with students.
 
 ## Features
    ### For Instructor
        *Innstructor can create online courses  
-       *Control for this course by creating quizzes,upload materials, set degrees for attendance of students and quizess
+       *Control for this course by creating quizzes,upload materials,set degrees for attendance of students and quizess
        *Chat with his students
        
    ### For Students
@@ -14,12 +14,19 @@
        
  ## Tools and Libraries used
     *Android Studio
-    *Firebase (Authentication, Database, Storage )
+    *Firebase for Authentication, Database and Storage
+    *Model–view–viewmodel (MVVM)
+    *Navigation component
     *ViewBinding 
     *Dependency Injection 
-    *[Sdp/Ssp (Responsive design)](https://github.com/intuit/ssp) 
-    *Glide (Image loading)
+    *Sdp/Ssp for responsive design
+    *Glide for Image loading
     *Design with XML
+    
+ ## Gallery   
+    ### For Instructor
+    
+        
  
  
  
