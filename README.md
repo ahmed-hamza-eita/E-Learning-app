@@ -18,6 +18,7 @@
 - Dependency Injection 
 - Sdp/Ssp for responsive design
 - Glide for Image loading
+- pdf viewer
 - Design with XML
  ## Screenshots 
 <img src="https://user-images.githubusercontent.com/80759221/217429013-22bb52e6-993c-43b2-b48f-5032e569caf5.jpg" width="15%" height="10%"> <img src="https://user-images.githubusercontent.com/80759221/217429027-72fd5890-813b-454b-984d-d35fb4df3617.jpg" width="15%" height="10%">
