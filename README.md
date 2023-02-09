@@ -13,7 +13,7 @@
        
        
  ## Tools and Libraries used
-    -Android Studio
+    *Android Studio
     -Firebase for Authentication, Database and Storage
     -Model–view–viewmodel (MVVM)
     -Navigation component
