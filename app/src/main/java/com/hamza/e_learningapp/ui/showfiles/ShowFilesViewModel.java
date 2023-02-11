@@ -43,7 +43,7 @@ public class ShowFilesViewModel extends ViewModel {
                     }
                     filesLiveData.setValue(files);
                 }else {
-                    e.setValue("No Material");
+                    e.setValue("No materials");
                 }}
 
             @Override
