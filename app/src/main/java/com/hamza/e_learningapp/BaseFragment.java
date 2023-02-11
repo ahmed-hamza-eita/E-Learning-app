@@ -12,6 +12,8 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
 
+import io.github.muddz.styleabletoast.StyleableToast;
+
 public abstract class BaseFragment extends Fragment {
 
     protected Context mContext;
@@ -36,7 +38,7 @@ public abstract class BaseFragment extends Fragment {
     }
 
     protected void showToast(String message) {
-        Toast.makeText(mFragmentActivity, message, Toast.LENGTH_SHORT).show();
+        StyleableToast.makeText(mFragmentActivity, message, R.style.toastStyle).show();
     }
 
 }
