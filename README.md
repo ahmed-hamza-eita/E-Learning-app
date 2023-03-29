@@ -15,7 +15,7 @@
 - Model–view–viewmodel (MVVM)
 - Navigation component
 - ViewBinding 
-- Dependency Injection 
+- Hilt 
 - Sdp/Ssp for responsive design
 - Glide for Image loading
 - pdf viewer
