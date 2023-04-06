@@ -78,7 +78,6 @@ public class ControlStdFragment extends BaseFragment {
     }
 
     private void onClicks() {
-
         binding.Btnactive.setOnClickListener(view -> {
            String attendanceCode = binding.attendStd.getText().toString().trim();
             if (attendanceCode.equals("")) {

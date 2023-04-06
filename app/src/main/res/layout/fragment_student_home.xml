@@ -67,19 +67,31 @@
         android:textSize="@dimen/_12ssp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintWidth_percent="0.80" />
+        app:layout_constraintWidth_percent="0.50" />
 
-    <androidx.appcompat.widget.AppCompatImageView
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btnAddCourse"
-        android:layout_width="@dimen/_25sdp"
-        android:layout_height="@dimen/_25sdp"
-        android:layout_marginStart="24dp"
-        android:src="@drawable/add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_3sdp"
+        android:src="@drawable/add3"
+        app:backgroundTint="@color/white"
         app:layout_constraintBottom_toBottomOf="@id/enterCourseId"
-
         app:layout_constraintStart_toEndOf="@id/enterCourseId"
         app:layout_constraintTop_toTopOf="@id/enterCourseId" />
 
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/helper"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:id="@+id/helper"
+        android:textAllCaps="false"
+        android:layout_marginStart="@dimen/_8sdp"
+        app:layout_constraintBottom_toBottomOf="@id/btnAddCourse"
+        app:layout_constraintStart_toEndOf="@id/btnAddCourse"
+        app:layout_constraintTop_toTopOf="@+id/btnAddCourse" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 

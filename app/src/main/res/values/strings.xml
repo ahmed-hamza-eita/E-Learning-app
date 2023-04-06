@@ -50,5 +50,9 @@
     <string name="total_attendance_grades">Total Attendance Grades : </string>
     <string name="your_attendance_grades">Your Attendance Grades</string>
     <string name="the_question">The question</string>
+    <string name="personal_assistant">personal assistant</string>
+    <string name="helper">Helper</string>
+    <string name="send_a_message">Send a message</string>
+    <string name="welcome_to_chat_gpt">Welcome to Chat GPT</string>
 
 </resources>

@@ -73,6 +73,9 @@
         <action
             android:id="@+id/action_instructorHomeFragment_to_instructorControlFragment"
             app:destination="@id/instructorControlFragment" />
+        <action
+            android:id="@+id/action_instructorHomeFragment_to_chatBotFragment"
+            app:destination="@id/chatBotFragment" />
     </fragment>
     <fragment
         android:id="@+id/studentHomeFragment"
@@ -82,6 +85,9 @@
         <action
             android:id="@+id/action_studentHomeFragment_to_controlStdFragment"
             app:destination="@id/controlStdFragment" />
+        <action
+            android:id="@+id/action_studentHomeFragment_to_chatBotFragment"
+            app:destination="@id/chatBotFragment" />
     </fragment>
     <fragment
         android:id="@+id/createCourseFragment"
@@ -276,4 +282,9 @@
             android:name="quizId"
             app:argType="string" />
     </fragment>
+    <fragment
+        android:id="@+id/chatBotFragment"
+        android:name="com.hamza.e_learningapp.ui.chat.chatbot.ChatBotFragment"
+        android:label="fragment_chatbot"
+        tools:layout="@layout/fragment_chatbot" />
 </navigation>

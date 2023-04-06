@@ -69,6 +69,7 @@ public class InstructorHomeFragment extends BaseFragment {
     }
 
     private void actions() {
+        binding.helper.setOnClickListener(view -> navigate(InstructorHomeFragmentDirections.actionInstructorHomeFragmentToChatBotFragment()));
         binding.addCourse.setOnClickListener(view ->
                 navigate(InstructorHomeFragmentDirections.actionInstructorHomeFragmentToCreateCourseFragment()));
         adapterCourses.setOnItemClick((name, id) ->

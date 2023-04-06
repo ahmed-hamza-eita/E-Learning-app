@@ -89,6 +89,9 @@ public class StudentHomeFragment extends BaseFragment {
     }
 
     private void actions() {
+        binding.helper.setOnClickListener(view -> {
+            navigate(StudentHomeFragmentDirections.actionStudentHomeFragmentToChatBotFragment());
+        });
         binding.btnAddCourse.setOnClickListener(view -> {
             String id = binding.enterCourseId.getText().toString().trim();
             if (id.isEmpty()) {

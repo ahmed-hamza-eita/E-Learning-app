@@ -296,31 +296,20 @@
     </androidx.cardview.widget.CardView>
 
 
-    <ImageView
-
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/imgChat"
-        android:layout_width="@dimen/_35sdp"
-        android:layout_height="@dimen/_35sdp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_20sdp"
-
-        android:layout_marginEnd="@dimen/_20sdp"
         android:layout_marginBottom="@dimen/_20sdp"
-        android:src="@drawable/chat"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:srcCompat="@drawable/chat_24"
+        app:backgroundTint="@color/white"
+        android:layout_marginTop="@dimen/_5sdp"
+         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/courseId" />
 
-<!--        <ImageView-->
 
-<!--            android:id="@+id/imgAddMembers"-->
-<!--            android:layout_width="@dimen/_35sdp"-->
-<!--            android:layout_height="@dimen/_35sdp"-->
-<!--            android:layout_marginStart="@dimen/_20sdp"-->
-<!--            android:layout_marginEnd="@dimen/_20sdp"-->
-<!--            android:layout_marginBottom="@dimen/_20sdp"-->
-<!--            android:background="@drawable/background_edittext"-->
-<!--            android:src="@drawable/add3"-->
-<!--            app:layout_constraintBottom_toBottomOf="parent"-->
-<!--            app:layout_constraintEnd_toEndOf="parent" />-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
