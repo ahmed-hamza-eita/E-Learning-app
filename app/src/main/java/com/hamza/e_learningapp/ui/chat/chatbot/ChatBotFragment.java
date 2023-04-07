@@ -6,6 +6,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.util.JsonReader;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -99,7 +101,7 @@ public class ChatBotFragment extends BaseFragment {
         try {
             jsonBody.put("model", "text-davinci-003");
             jsonBody.put("prompt", message);
-            jsonBody.put("max_tokens", 40000);
+            jsonBody.put("max_tokens", 4000);
             jsonBody.put("temperature", 0);
         } catch (JSONException e) {
             throw new RuntimeException(e);
@@ -108,7 +110,7 @@ public class ChatBotFragment extends BaseFragment {
         Request request = new Request.Builder()
                 .url(Const.API_URL)
                 .header("Authorization", "Bearer "+Const.API_KEY)
-                //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"
+
 
                 .post(body)
                 .build();
@@ -122,9 +124,12 @@ public class ChatBotFragment extends BaseFragment {
             public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
                 if (response.isSuccessful()) {
                     JSONObject jsonObject  ;
-                    try {
 
-                        jsonObject = new JSONObject(response.body(). string());
+                    try {
+                        assert response.body() != null;
+                        String json = response.peekBody(500).string();
+                        Log.e(json,"JSOn");
+                        jsonObject = new JSONObject(json);
                        final JSONArray jsonArray = jsonObject.getJSONArray("choices");
                         String result = jsonArray.getJSONObject(0).getString("text");
                         addResponse(result.trim());
@@ -132,7 +137,7 @@ public class ChatBotFragment extends BaseFragment {
                         throw new RuntimeException(e);
                     }
                 } else {
-                    addResponse(response.body().toString());
+                    addResponse(response.body().string());
                 }
             }
         });
