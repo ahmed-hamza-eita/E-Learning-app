@@ -36,6 +36,13 @@ public abstract class BaseFragment extends Fragment {
     protected void navigate(NavDirections navDirections) {
         Navigation.findNavController(mView).navigate(navDirections);
     }
+    protected void navigate(int navDirections) {
+        Navigation.findNavController(mView).navigate(navDirections);
+    }
+    protected void navigate(View view) {
+        Navigation.findNavController(view).popBackStack();
+
+    }
 
     protected void showToast(String message) {
         StyleableToast.makeText(mFragmentActivity, message, R.style.toastStyle).show();

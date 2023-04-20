@@ -8,6 +8,7 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
 
 import android.view.LayoutInflater;
@@ -59,58 +60,44 @@ public class SolveQuizFragment extends BaseFragment {
 
 
     private void actions() {
-        binding.btnNextQuestion.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
 
-                if (rightAnswer != 0) {
-                    checkAns();
-                    init();
-                } else {
-                    showToast("Please answer the question");
-                }
+        binding.btnNextQuestion.setOnClickListener(view -> {
+
+            if (rightAnswer != 0) {
+                checkAns();
+                init();
+            } else {
+                showToast("Please answer the question");
             }
         });
 
-        binding.anwser1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                rightAnswer = 1;
-                binding.anwser1.setBackgroundColor(ContextCompat.getColor(mContext, R.color.primaryTextColor));
-                binding.anwser2.setBackgroundColor(ContextCompat.getColor(mContext, R.color.whitee));
-                binding.anwser3.setBackgroundColor(ContextCompat.getColor(mContext, R.color.whitee));
-                binding.anwser4.setBackgroundColor(ContextCompat.getColor(mContext, R.color.whitee));
-            }
+        binding.anwser1.setOnClickListener(view -> {
+            rightAnswer = 1;
+            binding.anwser1.setBackgroundColor(ContextCompat.getColor(mContext, R.color.primaryTextColor));
+            binding.anwser2.setBackgroundColor(ContextCompat.getColor(mContext, R.color.whitee));
+            binding.anwser3.setBackgroundColor(ContextCompat.getColor(mContext, R.color.whitee));
+            binding.anwser4.setBackgroundColor(ContextCompat.getColor(mContext, R.color.whitee));
         });
-        binding.anwser2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                rightAnswer = 2;
-                binding.anwser1.setBackgroundColor(ContextCompat.getColor(mContext, R.color.whitee));
-                binding.anwser2.setBackgroundColor(ContextCompat.getColor(mContext, R.color.primaryTextColor));
-                binding.anwser3.setBackgroundColor(ContextCompat.getColor(mContext, R.color.whitee));
-                binding.anwser4.setBackgroundColor(ContextCompat.getColor(mContext, R.color.whitee));
-            }
+        binding.anwser2.setOnClickListener(view -> {
+            rightAnswer = 2;
+            binding.anwser1.setBackgroundColor(ContextCompat.getColor(mContext, R.color.whitee));
+            binding.anwser2.setBackgroundColor(ContextCompat.getColor(mContext, R.color.primaryTextColor));
+            binding.anwser3.setBackgroundColor(ContextCompat.getColor(mContext, R.color.whitee));
+            binding.anwser4.setBackgroundColor(ContextCompat.getColor(mContext, R.color.whitee));
         });
-        binding.anwser3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                rightAnswer = 3;
-                binding.anwser1.setBackgroundColor(ContextCompat.getColor(mContext, R.color.whitee));
-                binding.anwser2.setBackgroundColor(ContextCompat.getColor(mContext, R.color.whitee));
-                binding.anwser3.setBackgroundColor(ContextCompat.getColor(mContext, R.color.primaryTextColor));
-                binding.anwser4.setBackgroundColor(ContextCompat.getColor(mContext, R.color.whitee));
-            }
+        binding.anwser3.setOnClickListener(view -> {
+            rightAnswer = 3;
+            binding.anwser1.setBackgroundColor(ContextCompat.getColor(mContext, R.color.whitee));
+            binding.anwser2.setBackgroundColor(ContextCompat.getColor(mContext, R.color.whitee));
+            binding.anwser3.setBackgroundColor(ContextCompat.getColor(mContext, R.color.primaryTextColor));
+            binding.anwser4.setBackgroundColor(ContextCompat.getColor(mContext, R.color.whitee));
         });
-        binding.anwser4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                rightAnswer = 4;
-                binding.anwser1.setBackgroundColor(ContextCompat.getColor(mContext, R.color.whitee));
-                binding.anwser2.setBackgroundColor(ContextCompat.getColor(mContext, R.color.whitee));
-                binding.anwser3.setBackgroundColor(ContextCompat.getColor(mContext, R.color.whitee));
-                binding.anwser4.setBackgroundColor(ContextCompat.getColor(mContext, R.color.primaryTextColor));
-            }
+        binding.anwser4.setOnClickListener(view -> {
+            rightAnswer = 4;
+            binding.anwser1.setBackgroundColor(ContextCompat.getColor(mContext, R.color.whitee));
+            binding.anwser2.setBackgroundColor(ContextCompat.getColor(mContext, R.color.whitee));
+            binding.anwser3.setBackgroundColor(ContextCompat.getColor(mContext, R.color.whitee));
+            binding.anwser4.setBackgroundColor(ContextCompat.getColor(mContext, R.color.primaryTextColor));
         });
 
     }
@@ -122,6 +109,8 @@ public class SolveQuizFragment extends BaseFragment {
         }
         if (position == (list.size() - 1)) {
             NavHostFragment.findNavController(SolveQuizFragment.this).popBackStack();
+            navigate(R.id.studentHomeFragment);
+
         } else {
             position++;
         }
@@ -141,6 +130,11 @@ public class SolveQuizFragment extends BaseFragment {
     private void init() {
         if (position == (list.size() - 1)) {
             binding.btnNextQuestion.setText("Finish");
+//            binding.btnNextQuestion.setOnClickListener(v -> {
+//
+//                navigate(SolveQuizFragmentDirections.actionSolveQuizFragmentToAvailableQuizesFragment(courseId,courseId));
+//
+//            });
         }
         binding.txtQuestion.setText(list.get(position).getQuestion());
         binding.ans1.setText(list.get(position).getAnswer1());
@@ -150,12 +144,9 @@ public class SolveQuizFragment extends BaseFragment {
     }
 
     private void observer() {
-        viewModel.getQuizLiveData.observe(getViewLifecycleOwner(), new Observer<ArrayList<ModelQuiz>>() {
-            @Override
-            public void onChanged(ArrayList<ModelQuiz> modelQuizs) {
-                list = modelQuizs;
-                init();
-            }
+        viewModel.getQuizLiveData.observe(getViewLifecycleOwner(), modelQuizs -> {
+            list = modelQuizs;
+            init();
         });
 
     }
@@ -164,6 +155,7 @@ public class SolveQuizFragment extends BaseFragment {
     public void onDestroy() {
         super.onDestroy();
         viewModel.uploadResult(courseId, quizId, grade);
+
         showToast("Quiz solved");
         binding = null;
     }

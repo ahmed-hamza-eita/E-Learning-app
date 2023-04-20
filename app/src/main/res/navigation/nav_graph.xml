@@ -11,12 +11,18 @@
         android:label="SplashFragment"
         tools:layout="@layout/fragment_splash">
         <action
+            app:popUpTo="@+id/nav_graph"
+            app:popUpToInclusive="true"
             android:id="@+id/action_splashFragment_to_chooseTypeFragment"
             app:destination="@id/chooseTypeFragment" />
         <action
+            app:popUpTo="@+id/nav_graph"
+            app:popUpToInclusive="true"
             android:id="@+id/action_splashFragment_to_instructorHomeFragment"
             app:destination="@id/instructorHomeFragment" />
         <action
+            app:popUpTo="@+id/nav_graph"
+            app:popUpToInclusive="true"
             android:id="@+id/action_splashFragment_to_studentHomeFragment"
             app:destination="@id/studentHomeFragment" />
     </fragment>
@@ -281,6 +287,9 @@
         <argument
             android:name="quizId"
             app:argType="string" />
+        <action
+            android:id="@+id/action_solveQuizFragment_to_availableQuizesFragment"
+            app:destination="@id/availableQuizesFragment" />
     </fragment>
     <fragment
         android:id="@+id/chatBotFragment"
