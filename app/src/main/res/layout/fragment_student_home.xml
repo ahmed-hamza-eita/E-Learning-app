@@ -81,15 +81,18 @@
         app:layout_constraintTop_toTopOf="@id/enterCourseId" />
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/helper"
-        android:textColor="@color/white"
-        android:gravity="center"
         android:id="@+id/helper"
-        android:textAllCaps="false"
+        android:layout_width="0dp"
+        app:layout_constraintWidth_percent="0.26"
+        android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_8sdp"
+        android:gravity="center"
+        android:text="@string/helper"
+        android:textSize="@dimen/_9ssp"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="@id/btnAddCourse"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/btnAddCourse"
         app:layout_constraintTop_toTopOf="@+id/btnAddCourse" />
 </androidx.constraintlayout.widget.ConstraintLayout>

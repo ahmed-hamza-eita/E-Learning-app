@@ -87,10 +87,10 @@
                         android:layout_height="match_parent"
                         android:background="#FFFFFF"
                         android:gravity="center"
-                        android:hint="Grade\nQuiz"
+                        android:hint="Quiz\nGrade"
                         android:inputType="number"
                         android:padding="@dimen/_2sdp"
-                        android:textSize="12sp" />
+                        android:textSize="@dimen/_9ssp" />
 
                 </androidx.cardview.widget.CardView>
 
@@ -110,10 +110,10 @@
                         android:layout_height="match_parent"
                         android:background="#FFFFFF"
                         android:gravity="center"
-                        android:hint="Grade\nproject"
+                        android:hint="Project\nGrade"
                         android:inputType="number"
                         android:padding="@dimen/_2sdp"
-                        android:textSize="12sp" />
+                        android:textSize="@dimen/_9ssp" />
 
                 </androidx.cardview.widget.CardView>
 
@@ -128,15 +128,16 @@
                     app:cardCornerRadius="15dp">
 
                     <EditText
+
                         android:id="@+id/edit_attend_grade"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="#FFFFFF"
                         android:gravity="center"
-                        android:hint="Attandance\nGrad"
+                        android:hint="Attendance\nGrad"
                         android:inputType="number"
                         android:padding="@dimen/_2sdp"
-                        android:textSize="12sp" />
+                        android:textSize="@dimen/_9ssp" />
                 </androidx.cardview.widget.CardView>
 
             </LinearLayout>

@@ -60,12 +60,12 @@ public class InstructorHomeFragment extends BaseFragment {
                 adapterCourses.setList(modelCourses);
                 binding.recyclerInstructorCourse.setAdapter(adapterCourses);
 
-            } else if(modelCourses.size()==0){
+            } else {
                 loading(false);
                 showToast("No Courses");
             }
         });
-        instructorHomeViewModel.errorCLiveData.observe(getViewLifecycleOwner(), s -> showToast(s));
+        instructorHomeViewModel.errorCLiveData.observe(getViewLifecycleOwner(), this::showToast);
     }
 
     private void actions() {

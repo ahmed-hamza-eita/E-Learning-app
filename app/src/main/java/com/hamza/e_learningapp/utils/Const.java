@@ -23,6 +23,6 @@ public class Const {
     public static final String REF_QUIZ_ANSWER  = "quiz answer" ;
 
     public static final String API_URL = "https://api.openai.com/v1/completions";
-    public static final String API_KEY = "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";
+    public static final String API_KEY ="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";
 
 }

@@ -123,13 +123,11 @@ public class ChatBotFragment extends BaseFragment {
             @Override
             public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
                 if (response.isSuccessful()) {
-                    JSONObject jsonObject  ;
 
                     try {
-                        assert response.body() != null;
                         String json = response.peekBody(500).string();
                         Log.e(json,"JSOn");
-                        jsonObject = new JSONObject(json);
+                        JSONObject jsonObject = new JSONObject(json);
                        final JSONArray jsonArray = jsonObject.getJSONArray("choices");
                         String result = jsonArray.getJSONObject(0).getString("text");
                         addResponse(result.trim());
