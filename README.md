@@ -12,6 +12,7 @@
 
 ## Tools and Libraries used
 - Firebase for Authentication, Database and Storage
+- OkHttp
 - [Model–view–viewmodel (MVVM)](https://www.geeksforgeeks.org/mvvm-model-view-viewmodel-architecture-pattern-in-android/)
 - [Navigation component](https://developer.android.com/guide/navigation)
 - [ViewBinding ](https://developer.android.com/topic/libraries/view-binding)
@@ -19,6 +20,7 @@
 - [Sdp/Ssp for responsive design](https://github.com/intuit/sdp)
 - [Glide for Image loading](https://github.com/bumptech/glide)
 - [pdf viewer](https://github.com/barteksc/AndroidPdfViewer)
+
  ## Screenshots 
 <img src="https://user-images.githubusercontent.com/80759221/217429013-22bb52e6-993c-43b2-b48f-5032e569caf5.jpg" width="15%" height="10%"> <img src="https://user-images.githubusercontent.com/80759221/217429027-72fd5890-813b-454b-984d-d35fb4df3617.jpg" width="15%" height="10%">
 <img src="https://user-images.githubusercontent.com/80759221/217429029-857b3457-d472-4d3f-b3f2-de1597434457.jpg" width="15%" height="10%">
