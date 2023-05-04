@@ -1,9 +1,9 @@
 # E-Learning-app
-   Using this app, you can create courses,quizzes and materials for the subject content and share them with students.
+   Using this app, you can create courses, quizzes and materials for the subject content and share them with students.
 ## Features
    ### For Instructor
 - Instructor can create online courses  
-- Control for this course by creating quizzes,upload materials,set degrees for attendance of students and quizess
+- Control for this course by creating quizzes, upload materials, set degrees for attendance of students and quizess
 - Chat with his students
 
 ### For Students
