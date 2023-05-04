@@ -12,7 +12,7 @@
 
 ## Tools and Libraries used
 - Firebase for Authentication, Database and Storage
-- OkHttp
+- OkHttp to create Chatbot using openAi API
 - [Model–view–viewmodel (MVVM)](https://www.geeksforgeeks.org/mvvm-model-view-viewmodel-architecture-pattern-in-android/)
 - [Navigation component](https://developer.android.com/guide/navigation)
 - [ViewBinding ](https://developer.android.com/topic/libraries/view-binding)
