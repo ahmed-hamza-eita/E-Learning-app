@@ -13,7 +13,7 @@
 ## Tools and Libraries used
 - Firebase for Authentication, Database and Storage
 - OkHttp to create Chatbot using openAi API
-- [Model–view–viewmodel (MVVM)](https://www.geeksforgeeks.org/mvvm-model-view-viewmodel-architecture-pattern-in-android/)
+- [MVVM Architecture ](https://www.geeksforgeeks.org/mvvm-model-view-viewmodel-architecture-pattern-in-android/)
 - [Navigation component](https://developer.android.com/guide/navigation)
 - [ViewBinding ](https://developer.android.com/topic/libraries/view-binding)
 - [Dependency injection with Hilt ](https://developer.android.com/training/dependency-injection/hilt-android)
