@@ -10,9 +10,8 @@
 - Students can enroll in courses  
 - They can solve quizes , download materials and chat with instructor   
 ## Tools and Libraries used
-- Android Studio
 - Firebase for Authentication, Database and Storage
-- Model–view–viewmodel (MVVM)
+- [Model–view–viewmodel (MVVM)](https://www.geeksforgeeks.org/mvvm-model-view-viewmodel-architecture-pattern-in-android/)
 - Navigation component
 - ViewBinding 
 - Hilt 
