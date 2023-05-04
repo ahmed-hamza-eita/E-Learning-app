@@ -19,7 +19,7 @@
 - [Dependency injection with Hilt ](https://developer.android.com/training/dependency-injection/hilt-android)
 - [Sdp/Ssp for responsive design](https://github.com/intuit/sdp)
 - [Glide for Image loading](https://github.com/bumptech/glide)
-- [pdf viewer](https://github.com/barteksc/AndroidPdfViewer)
+- [pdf viewer library for viewing pdf file in app](https://github.com/barteksc/AndroidPdfViewer)
 
  ## Screenshots 
 <img src="https://user-images.githubusercontent.com/80759221/217429013-22bb52e6-993c-43b2-b48f-5032e569caf5.jpg" width="15%" height="10%"> <img src="https://user-images.githubusercontent.com/80759221/217429027-72fd5890-813b-454b-984d-d35fb4df3617.jpg" width="15%" height="10%">
